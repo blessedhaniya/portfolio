@@ -1,97 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Haniya | Junior AI & App Developer</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Haniya | Junior AI Developer</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f6f9;
-            color: #333;
-        }
+<style>
+:root {
+    --primary: #6a11cb;
+    --secondary: #2575fc;
+    --bg-light: #f4f6f9;
+    --text-light: #333;
+    --card-light: white;
 
-        header {
-            background: linear-gradient(135deg, #6a11cb, #2575fc);
-            color: white;
-            text-align: center;
-            padding: 60px 20px;
-        }
+    --bg-dark: #121212;
+    --text-dark: #f4f6f9;
+    --card-dark: #1e1e1e;
+}
 
-        header h1 {
-            margin: 0;
-            font-size: 40px;
-        }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--bg-light);
+    color: var(--text-light);
+    transition: 0.3s ease;
+}
 
-        header p {
-            font-size: 18px;
-            margin-top: 10px;
-        }
+body.dark {
+    background: var(--bg-dark);
+    color: var(--text-dark);
+}
 
-        .btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: white;
-            color: #2575fc;
-            text-decoration: none;
-            border-radius: 20px;
-            font-weight: bold;
-        }
+header {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    text-align: center;
+    padding: 70px 20px;
+}
 
-        section {
-            padding: 50px 20px;
-            max-width: 1000px;
-            margin: auto;
-        }
+header h1 {
+    margin: 0;
+    font-size: 42px;
+}
 
-        h2 {
-            text-align: center;
-            margin-bottom: 30px;
-        }
+header p {
+    font-size: 18px;
+    margin-top: 10px;
+}
 
-        .skills, .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: white;
+    color: var(--secondary);
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+}
 
-        .card {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: 0.3s;
-        }
+.toggle-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
 
-        .card:hover {
-            transform: translateY(-5px);
-        }
+section {
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
 
-        footer {
-            background: #222;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
 
-        .goal {
-            background: #e3f2fd;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-        }
-    </style>
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: var(--card-light);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    transition: 0.4s ease;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+body.dark .card {
+    background: var(--card-dark);
+}
+
+.card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+</style>
 </head>
 
 <body>
 
+<button class="toggle-btn" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+
 <header>
     <h1>Hi, I'm Haniya 👩‍💻</h1>
-    <p>Junior AI & App Developer | Scratch • Python • App Lab</p>
-    <a href="#projects" class="btn">View My Projects</a>
+    <p>Junior AI & App Developer | Scratch • Python • AI</p>
+    <a href="#projects" class="btn">Explore My Work</a>
 </header>
 
 <section>
@@ -103,69 +139,67 @@
 </section>
 
 <section>
-    <h2>🛠️ Skills</h2>
-    <div class="skills">
-        <div class="card">
-            <h3>🎮 Scratch</h3>
-            <p>Game development, animations, and interactive storytelling.</p>
-        </div>
-
-        <div class="card">
-            <h3>🐍 Python</h3>
-            <p>Mini apps, quizzes, calculators, and beginner AI concepts.</p>
-        </div>
-
-        <div class="card">
-            <h3>📱 App Lab</h3>
-            <p>Interactive apps with user input and event-based logic.</p>
-        </div>
-
-        <div class="card">
-            <h3>🤖 AI Basics</h3>
-            <p>Image recognition and pattern detection fundamentals.</p>
-        </div>
+    <h2>🛠 Skills</h2>
+    <div class="grid">
+        <div class="card">🎮 Scratch – Game Design & Animation</div>
+        <div class="card">🐍 Python – Apps & Mini Projects</div>
+        <div class="card">📱 App Lab – Interactive Applications</div>
+        <div class="card">🤖 AI Basics – Pattern Recognition</div>
     </div>
 </section>
 
 <section id="projects">
-    <h2>🚀 My Projects</h2>
-    <div class="projects">
-
+    <h2>🚀 Projects</h2>
+    <div class="grid">
         <div class="card">
-            <h3>🎮 Scratch Arcade Game</h3>
-            <p>Built using sprites, variables, scoring system, and levels.</p>
+            <h3>Scratch Arcade Game</h3>
+            <p>Multi-level game with scoring system.</p>
         </div>
 
         <div class="card">
-            <h3>🐍 Python Quiz App</h3>
-            <p>Interactive quiz application using loops and functions.</p>
+            <h3>Python Quiz App</h3>
+            <p>Interactive quiz built using loops & functions.</p>
         </div>
 
         <div class="card">
-            <h3>📱 Calculator App</h3>
-            <p>App Lab calculator using event-driven programming.</p>
+            <h3>Calculator App</h3>
+            <p>Event-driven calculator using App Lab.</p>
         </div>
 
         <div class="card">
-            <h3>🤖 Mini AI Classifier</h3>
-            <p>Simple AI project that recognizes patterns using beginner ML tools.</p>
+            <h3>Mini AI Classifier</h3>
+            <p>Basic AI project recognizing patterns.</p>
         </div>
-
-    </div>
-</section>
-
-<section>
-    <h2>🎯 My Goal</h2>
-    <div class="goal">
-        To become an AI Developer and build smart applications that make learning fun and helpful for everyone!
     </div>
 </section>
 
 <footer>
-    © 2026 Haniya | Junior Developer Portfolio  
-    <br>
-    Managed by Parent
+    © 2026 Haniya | Managed by Parent
 </footer>
+
+<script>
+// Dark Mode Toggle
+function toggleDarkMode() {
+    document.body.classList.toggle("dark");
+}
+
+// Scroll Animation
+const cards = document.querySelectorAll('.card');
+
+function showCards() {
+    const triggerBottom = window.innerHeight * 0.85;
+
+    cards.forEach(card => {
+        const cardTop = card.getBoundingClientRect().top;
+        if(cardTop < triggerBottom) {
+            card.classList.add('show');
+        }
+    });
+}
+
+window.addEventListener('scroll', showCards);
+window.addEventListener('load', showCards);
+</script>
 
 </body>
 </html>
